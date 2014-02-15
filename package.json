@@ -1,0 +1,29 @@
+{
+  "name": "easy-cluster",
+  "version": "0.0.0",
+  "description": "A cluster daemon with a rest interface for your app.",
+  "main": "  ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/godaddy/node-easy-cluster.git"
+  },
+  "keywords": [
+    "cluster",
+    "daemon",
+    "manager"
+  ],
+  "contributors": [
+    {
+      "name":"Joe Spencer",
+      "email":"js.developer.undefined@gmail.com",
+      "url" : "https://github.com/jsdevel"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/godaddy/node-easy-cluster/issues"
+  }
+}
