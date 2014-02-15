@@ -1,6 +1,6 @@
 {
   "name": "easy-cluster",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A cluster daemon with a rest interface for your app.",
   "bin": {
     "easy-cluster": "./bin/easy-cluster.js"
