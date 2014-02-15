@@ -1,5 +1,8 @@
 easy-cluster
 ======================
+[![Build Status](https://travis-ci.org/godaddy/node-easy-cluster.png)](https://travis-ci.org/godaddy/node-easy-cluster)
+
+````
                                      ^
                                     //\
                                        \
@@ -12,6 +15,8 @@ easy-cluster
                    ( ______)_//<_> O////  ( (@O ) )
                     (________/ ====='o'    \ `-' /
                      `----'                 `---' 
+````
+
 `easy-cluster`, so named after easy rider and node's cluster module, is a
 painless, simple, easy going daemon to manage multiple node.js clusters.  
 
