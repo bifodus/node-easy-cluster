@@ -44,10 +44,12 @@
     "proxyquire": "~0.5.2",
     "sinon": "~1.8.2",
     "jshint": "~2.4.3",
-    "glob": "~3.2.8"
+    "glob": "~3.2.8",
+    "should": "~3.1.2"
   },
   "dependencies": {
     "express": "~3.4.8",
-    "minimist": "0.0.7"
+    "minimist": "0.0.7",
+    "express-namespace": "~0.1.1"
   }
 }
