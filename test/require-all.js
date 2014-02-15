@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * This simply requires all modules so istanbul can complain more :)
  */
@@ -10,4 +10,3 @@ glob.sync('../lib/**/*.js', {cwd:__dirname}).forEach(function(module){
 });
 
 require('../server.js');
-require('../bin/easy-cluster.js');

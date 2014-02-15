@@ -7,7 +7,7 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "jshint": "jshint server.js lib && jshint --config .jshintrc-test test",
+    "jshint": "jshint server.js lib bin && jshint --config .jshintrc-test test",
     "mocha": "mocha -w",
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "report": "istanbul report cobertura",
