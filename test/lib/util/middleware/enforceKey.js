@@ -2,7 +2,7 @@
 
 describe('enforceKey middleware', function() {
   var sinon = require('sinon');
-  var module = require('../../../lib/util/middleware/enforceKey');
+  var module = require('../../../../lib/util/middleware/enforceKey');
   var next = sinon.stub();
   var req = {
     body:null,
