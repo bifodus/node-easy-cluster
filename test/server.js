@@ -5,7 +5,8 @@ describe('server.js', function() {
   var prequire = require('proxyquire');
   var express = sinon.stub();
   var app = {
-    namespace:sinon.stub().callsArg(1)
+    namespace:sinon.stub().callsArg(1),
+    use:sinon.stub()
   };
   var server = {
     address:sinon.stub(),
@@ -15,10 +16,12 @@ describe('server.js', function() {
     createServer : sinon.stub().returns(server)
   };
   var clustersController = sinon.stub();
+  var enforceKey = sinon.stub();
   var serverModule = prequire('../server.js', {
     'express':express,
     'http':http,
-    './lib/controllers/api/clusters':clustersController
+    './lib/controllers/api/clusters':clustersController,
+    './lib/util/middleware/enforceKey':enforceKey
   });
   var address;
   var args;
@@ -31,10 +34,13 @@ describe('server.js', function() {
       'port':0
     };
     app.namespace.reset();
+    app.use.reset();
     http.createServer.reset();
     server.listen.reset();
     server.address.reset();
     server.address.returns(address);
+    enforceKey.reset();
+    enforceKey.returns('enforceKey');
     express.reset();
     express.returns(app);
     sinon.stub(console, 'log');
@@ -79,6 +85,15 @@ describe('server.js', function() {
       serverModule(args);
       server.listen.args[0][1]();
       sinon.assert.notCalled(console.log);
+    });
+  });
+
+  describe('when key exists', function() {
+    it('adds middleware to app', function() {
+      args.key = 'wooot';
+      serverModule(args);
+      sinon.assert.calledWith(app.use, 'enforceKey');
+      sinon.assert.calledWith(enforceKey, 'wooot');
     });
   });
 });
