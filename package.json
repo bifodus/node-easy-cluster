@@ -20,6 +20,11 @@
       "name":"Joe Spencer",
       "email":"js.developer.undefined@gmail.com",
       "url" : "https://github.com/jsdevel"
+    },
+    {
+      "name":"Joe Diaz",
+      "email":"joediaz0312@gmail.com",
+      "url" : "https://github.com/JoeDiaz"
     }
   ],
   "license": "MIT",
