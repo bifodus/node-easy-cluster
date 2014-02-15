@@ -1,10 +1,17 @@
 {
   "name": "easy-cluster",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A cluster daemon with a rest interface for your app.",
-  "main": "  ",
+  "bin": {
+    "easy-cluster": "./bin/easy-cluster.js"
+  },
+  "preferGlobal": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jshint": "jshint server.js lib && jshint --config .jshintrc-test test",
+    "mocha": "mocha -w",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "report": "istanbul report cobertura",
+    "test": "npm run-script jshint && npm run-script cover && npm run-script report"
   },
   "repository": {
     "type": "git",
@@ -17,18 +24,30 @@
   ],
   "contributors": [
     {
-      "name":"Joe Spencer",
-      "email":"js.developer.undefined@gmail.com",
-      "url" : "https://github.com/jsdevel"
+      "name": "Joe Spencer",
+      "email": "js.developer.undefined@gmail.com",
+      "url": "https://github.com/jsdevel"
     },
     {
-      "name":"Joe Diaz",
-      "email":"joediaz0312@gmail.com",
-      "url" : "https://github.com/JoeDiaz"
+      "name": "Joe Diaz",
+      "email": "joediaz0312@gmail.com",
+      "url": "https://github.com/JoeDiaz"
     }
   ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/godaddy/node-easy-cluster/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "istanbul": "~0.2.4",
+    "proxyquire": "~0.5.2",
+    "sinon": "~1.8.2",
+    "jshint": "~2.4.3",
+    "glob": "~3.2.8"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+    "minimist": "0.0.7"
   }
 }
